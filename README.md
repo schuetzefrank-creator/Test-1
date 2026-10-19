@@ -54,5 +54,7 @@ python3 src/audio.py            # Tonspur
 python3 src/render.py still 5   # Einzelbild zur Kontrolle -> out/still_05.00.jpg
 ```
 
-Danach Ton anlegen:
+Danach Ton auf -14 LUFS normalisieren und anlegen:
+`ffmpeg -i out/ton.wav -af loudnorm=I=-14:TP=-1.5 -ar 48000 out/ton_n.wav`
+
 `ffmpeg -i out/kamin_basis_9x16_stumm.mp4 -i out/ton.wav -c:v copy -c:a aac -b:a 192k -shortest out/kamin_basis_9x16.mp4`
