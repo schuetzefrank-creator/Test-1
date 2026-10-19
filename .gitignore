@@ -1,0 +1,4 @@
+out/log_*.txt
+out/*_stumm.mp4
+out/still_*.jpg
+__pycache__/
